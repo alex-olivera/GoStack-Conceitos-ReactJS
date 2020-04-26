@@ -16,6 +16,12 @@ div {
 div li {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 5px 15px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  width: 500px;
 }
 
 div li + li {
@@ -31,9 +37,93 @@ button {
   margin-top: 15px;
   font-weight: bold;
   font-size: 14px;
+  border-radius: 15px;
 }
 
 div li button {
-  margin: 0 15px;
+  margin: 0;
   background: #ca4949;
+  border-radius: 15px;
+  padding: 10px 15px;
+}
+
+.form-flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 0;
+}
+
+.form-flex-column .row {
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.form-flex-column .row-input {
+  margin: 0;
+  background: #fff;
+  box-shadow: 2px 4px 10px #00000026;
+  border-radius: 33px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  font-weight: bold;
+  padding: 4px;
+}
+
+.form-flex-column .row-input input {
+  width: calc(100% - 130px);
+  border-radius: 33px;
+  border: 0;
+  padding-left: 16px;
+  height: 100%;
+  font-size: 1em;
+}
+
+.form-flex-column .row-input button {
+  margin: 0;
+  width: 130px;
+  padding: 10px;
+  border-radius: 33px;
+  font-size: 0.9em;
+}
+
+.form-flex-column .input-default {
+  margin: 0;
+  margin-bottom: 10px;
+  background: #fff;
+  box-shadow: 2px 4px 10px #00000026;
+  border-radius: 33px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 2px 20px;
+  border: none;
+  font-size: 1em;
+}
+
+.badge {
+  width: auto;
+  margin: 10px 5px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 4px 0px 4px 10px;
+  border-radius: 10px;
+  background-color: #52C782;
+  color: #fff;
+  justify-content: space-between;
+}
+
+.badge button {
+  background: transparent;
+  margin: 0;
+  padding: 5px 10px;
 }

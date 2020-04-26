@@ -4,6 +4,10 @@ import api from './services/api';
 
 import "./styles.css";
 
+//Components
+import RepositoriesList from './components/RepositoriesList';
+import FormAddRepository from './components/FormAddRepository';
+
 function App() {
 
   const [repositories, setRepositories] = useState([])
@@ -14,12 +18,7 @@ function App() {
     })
   }, []);
 
-  async function handleAddRepository() {
-    const repository = {
-      "title": "Desafio Node",
-      "url": "http://github.com/alex",
-      "techs": ["Node.js"]
-    }
+  async function handleAddRepository(repository) {
     const response = await api.post('/repositories', repository);
 
     const newRepository = response.data;
@@ -38,21 +37,8 @@ function App() {
 
   return (
     <div>
-      <ul data-testid="repository-list">
-        { repositories.map( repository => {
-          return (
-            <li key={repository.id}>
-              {repository.title}
-
-              <button onClick={() => handleRemoveRepository(repository.id)}>
-                Remover
-              </button>
-            </li>
-          )
-        }) }
-      </ul>
-
-      <button onClick={handleAddRepository}>Adicionar</button>
+      <RepositoriesList repositories={repositories} handleRemoveRepository={handleRemoveRepository} />
+      <FormAddRepository handleAddRepository={handleAddRepository} />
     </div>
   );
 }
